@@ -47,3 +47,5 @@ require("lazy").setup({
     },
   },
 })
+
+require("barbecue.ui").toggle(true)
