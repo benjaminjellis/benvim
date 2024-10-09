@@ -1,3 +1,3 @@
 # (BE)NVIM
 
-![dashboard](https://github.com/benjaminjellis/benvim/blob/assets/dashboard.png?raw=true)
+![dashboard](https://github.com/benjaminjellis/benvim/blob/main/assets/dashboard.png?raw=true)
