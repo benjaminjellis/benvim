@@ -14,6 +14,21 @@ return {
         [[ (    /     |       ]],
         [[  ===/___) ||        ]],
       }
+      local modularLogo = [[    ____  _______    _______   ____    _____  ___  ___      ___  __     ___      ___ 
+   /   ")|   _  "\  /"     "| (  " \  (\"   \|"  \|"  \    /"  ||" \   |"  \    /"  |
+  /. __/ (. |_)  :)(: ______)  \__. \ |.\\   \    |\   \  //  / ||  |   \   \  //   |
+ // /    |:     \/  \/    |       ) :)|: \.   \\  | \\  \/. ./  |:  |   /\\  \/.    |
+(: (___  (|  _  \\  // ___)_   __/ // |.  \    \. |  \.    //   |.  |  |: \.        |
+ \     ) |: |_)  :)(:      "| /"   /  |    \    \ |   \\   /    /\  |\ |.  \    /:  |
+  \"__/  (_______/  \_______)(____/    \___|\____\)    \__/    (__\_|_)|___|\__/|___|
+                                                                                     ]]
+      local twistedLogo = [[  __     _____     _____  __   __   __    _     _   __    __    __   
+ /\_\  /\  __/\  /\_____\/_/\ /_/\ /\_\  /_/\ /\_\ /\_\  /_/\  /\_\  
+( ( (  ) )(_ ) )( (_____/) ) )) ) \ ( (  ) ) ) ( ( \/_/  ) ) \/ ( (  
+ \ \_\/ / __/ /  \ \__\ /_/ //_/   \ \_\/_/ / \ \_\ /\_\/_/ \  / \_\ 
+ / / /\ \  _\ \  / /__/_\ \ \\ \ \   / /\ \ \_/ / // / /\ \ \\// / / 
+( (_(  ) )(__) )( (_____\)_) ))_) \ (_(  \ \   / /( (_(  )_) )( (_(  
+ \/_/  \/____\/  \/_____/\_\/ \_\/ \/_/   \_\_/_/  \/_/  \_\/  \/_/  ]]
       local logo = [[
 
 ░░██╗██████╗░███████╗██╗░░███╗░░██╗██╗░░░██╗██╗███╗░░░███╗
@@ -24,7 +39,7 @@ return {
 ░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
         ]]
 
-      logo = string.rep("\n", 8) .. logo .. "\n"
+      logo = string.rep("\n", 8) .. modularLogo .. "\n\n"
       -- Convert the map table to a string
       local imageString = table.concat(ivy, "\n")
 
@@ -44,13 +59,9 @@ return {
           center = {
             { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },
             { action = "ene | startinsert",                              desc = " New File",        icon = " ", key = "n" },
-            { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = " ", key = "r" },
             { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = " ", key = "g" },
             { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = " ", key = "c" },
-            { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = " ", key = "s" },
-            { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = " ", key = "x" },
             { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
-            { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
           },
           footer = function()
             local stats = require("lazy").stats()
