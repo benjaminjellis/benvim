@@ -61,7 +61,7 @@
   },
   "grug-far.nvim": {
     "branch": "main",
-    "commit": "4e7e61d9a777ee11550ff396080abe295fcc98fe"
+    "commit": "75aad2698d428bdc94ff15f487f7165aee8ccbfb"
   },
   "haskell-snippets.nvim": {
     "branch": "master",
@@ -177,7 +177,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "04680101ff79e99b4e33a4386ec27cbd0d360c75"
+    "commit": "d3f169f436e1b44538bfe7e13b4721eec48dbc59"
   },
   "nvim-navic": {
     "branch": "master",
@@ -197,7 +197,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "86c10df7ef77daf45a0e4a918934bb59083db1e1"
+    "commit": "9d2acd49976e2a9da72949008df03436f781fd23"
   },
   "nvim-treesitter-textobjects": {
     "branch": "master",
