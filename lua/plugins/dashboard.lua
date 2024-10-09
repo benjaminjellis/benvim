@@ -1,14 +1,19 @@
 return {
 
-  { "MaximilianLloyd/ascii.nvim", lazy = true, dependencies = { "MunifTanjim/nui.nvim" } },
   {
     "nvimdev/dashboard-nvim",
     lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
     opts = function()
-      local ascii = require("ascii")
-      local images = { ascii.art.movies.starwars["r2_1"], ascii.art.animals.dogs.percy, ascii.art.animals.dogs.barney }
-      math.randomseed(os.time())
-
+      local ivy = {
+        [[        /^-^\        ]],
+        [[       / o o \       ]],
+        [[      /   Y   \      ]],
+        [[      V \ v / V      ]],
+        [[        / - \        ]],
+        [[       /    |        ]],
+        [[ (    /     |       ]],
+        [[  ===/___) ||        ]],
+      }
       local logo = [[
 
 ░░██╗██████╗░███████╗██╗░░███╗░░██╗██╗░░░██╗██╗███╗░░░███╗
@@ -19,12 +24,9 @@ return {
 ░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
         ]]
 
-      local randomIndex = math.random(1, #images)
-      local image = images[randomIndex]
-
       logo = string.rep("\n", 8) .. logo .. "\n"
       -- Convert the map table to a string
-      local imageString = table.concat(image, "\n")
+      local imageString = table.concat(ivy, "\n")
 
       -- Concatenate the logo and the map
       local fullDisplay = logo .. imageString .. "\n"
