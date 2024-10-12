@@ -1,4 +1,5 @@
 return {
+
   {
     "benjaminjellis/citruszest.nvim",
     lazy = false,

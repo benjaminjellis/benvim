@@ -1,6 +1,7 @@
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
+  lazy = true,
   version = "*",
   dependencies = {
     "SmiteshP/nvim-navic",
