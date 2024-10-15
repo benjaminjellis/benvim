@@ -9,6 +9,7 @@ return {
         "json-lsp",
         "yaml-language-server",
         "debugpy",
+        "fsautocomplete",
       },
     },
   },
