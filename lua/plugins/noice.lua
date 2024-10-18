@@ -18,15 +18,6 @@ return {
         },
         opts = { skip = true },
       },
-
-      {
-        filter = {
-          event = "lsp",
-          kind = "progress",
-          find = "..fs.",
-        },
-        opts = { skip = true },
-      },
       {
         filter = {
           event = "msg_show",
