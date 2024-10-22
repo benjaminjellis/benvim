@@ -20,6 +20,14 @@ return {
       },
       {
         filter = {
+          event = "lsp",
+          kind = "progress",
+          find = "..fs.",
+        },
+        opts = { skip = true },
+      },
+      {
+        filter = {
           event = "msg_show",
           any = {
             { find = "%d+L, %d+B" },

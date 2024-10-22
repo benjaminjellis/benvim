@@ -38,7 +38,6 @@ return {
     optional = true,
     opts = { ensure_installed = { "codelldb" } },
   },
-
   {
     "mrcjkb/rustaceanvim",
     version = vim.fn.has("nvim-0.10.0") == 0 and "^4" or false,
@@ -65,6 +64,9 @@ return {
             },
             -- Add clippy lints for Rust.
             checkOnSave = true,
+            rustfmt = {
+              extraArgs = { "--config", "imports_granularity=crate" },
+            },
             procMacro = {
               enable = true,
               ignored = {

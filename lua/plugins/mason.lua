@@ -10,6 +10,7 @@ return {
         "yaml-language-server",
         "debugpy",
         "fsautocomplete",
+        "clangd",
       },
     },
   },
