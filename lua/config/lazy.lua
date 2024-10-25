@@ -28,9 +28,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 
-    --  Github
-    { import = "lazyvim.plugins.extras.util.octo" },
-
     { import = "plugins" },
   },
   defaults = {
