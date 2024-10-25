@@ -1,15 +1,15 @@
 return {
 
   {
-    "benjaminjellis/citruszest.nvim",
+    "benjaminjellis/citrusdream.nvim",
     lazy = false,
     priority = 1000,
-    name = "citruszest",
+    name = "citrusdream",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "citruszest",
+      colorscheme = "citrusdream",
     },
   },
 }
