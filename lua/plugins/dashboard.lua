@@ -39,7 +39,7 @@ return {
 ░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
         ]]
 
-      logo = string.rep("\n", 8) .. modularLogo .. "\n\n"
+      logo = string.rep("\n", 8) .. twistedLogo .. "\n\n"
       -- Convert the map table to a string
       local imageString = table.concat(ivy, "\n")
 
