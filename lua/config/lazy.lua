@@ -5,6 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.rtp:prepend("/Users/benjaminellis/code/BenCase/_opam/share/ocp-indent/vim")
 
 require("lazy").setup({
   spec = {
@@ -14,10 +15,9 @@ require("lazy").setup({
     -- Lang
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.lang.haskell" },
-    { import = "lazyvim.plugins.extras.lang.elm" },
-    { import = "lazyvim.plugins.extras.lang.kotlin" },
-    { import = "lazyvim.plugins.extras.lang.python" },
+    -- { import = "lazyvim.plugins.extras.lang.haskell" },
+    -- { import = "lazyvim.plugins.extras.lang.elm" },
+    -- { import = "lazyvim.plugins.extras.lang.kotlin" },
 
     -- Debugging & Tests
     { import = "lazyvim.plugins.extras.dap.core" },
