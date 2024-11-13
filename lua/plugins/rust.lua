@@ -44,10 +44,13 @@ return {
     ft = { "rust" },
     opts = {
       server = {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
           vim.keymap.set("n", "<leader>cR", function()
             vim.cmd.RustLsp("codeAction")
           end, { desc = "Code Action", buffer = bufnr })
+          vim.keymap.set("n", "<leader>ce", function()
+            vim.cmd.RustLsp("expandMacro")
+          end, { desc = "Expand Macro", buffer = bufnr })
           vim.keymap.set("n", "<leader>ch", function()
             vim.cmd.RustLsp({ "hover", "actions" })
           end, { desc = "Hover Action", buffer = bufnr })
