@@ -15,6 +15,7 @@ require("lazy").setup({
     -- Lang
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.editor.navic" },
     -- { import = "lazyvim.plugins.extras.lang.haskell" },
     -- { import = "lazyvim.plugins.extras.lang.elm" },
     -- { import = "lazyvim.plugins.extras.lang.kotlin" },
