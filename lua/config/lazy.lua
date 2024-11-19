@@ -15,7 +15,8 @@ require("lazy").setup({
     -- Lang
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.editor.navic" },
+    -- disable because this is currently buggy
+    -- { import = "lazyvim.plugins.extras.editor.navic" },
     -- { import = "lazyvim.plugins.extras.lang.haskell" },
     -- { import = "lazyvim.plugins.extras.lang.elm" },
     -- { import = "lazyvim.plugins.extras.lang.kotlin" },
@@ -28,6 +29,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+    { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
 
     { import = "plugins" },
   },
