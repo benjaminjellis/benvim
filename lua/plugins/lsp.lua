@@ -25,16 +25,16 @@ return {
       servers = {
         jsonls = {},
         yamlls = {},
-        -- harper_ls = {
-        --   settings = {
-        --     ["harper-ls"] = {
-        --       linters = {
-        --         sentence_capitalization = false,
-        --         long_sentences = false,
-        --       },
-        --     },
-        --   },
-        -- },
+        harper_ls = {
+          settings = {
+            ["harper-ls"] = {
+              linters = {
+                sentence_capitalization = false,
+                long_sentences = false,
+              },
+            },
+          },
+        },
       },
     },
   },
