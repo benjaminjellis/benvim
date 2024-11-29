@@ -12,20 +12,14 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    -- Lang
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
-
     -- Debugging & Tests
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.test.core" },
 
     -- UI
-    { import = "lazyvim.plugins.extras.coding.mini-surround" },
-    -- this is currently buggy,
-    -- { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+    -- { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-    { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
+    -- { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
 
     { import = "plugins" },
   },
