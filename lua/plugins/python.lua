@@ -25,7 +25,11 @@ return {
   end,
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "ninja", "rst" } },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "python",
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -149,5 +153,14 @@ return {
         python = function() end,
       },
     },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, {
+        "debugpy",
+        "pyright",
+      })
+    end,
   },
 }

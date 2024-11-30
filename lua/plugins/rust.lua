@@ -25,18 +25,23 @@ return {
       table.insert(opts.sources, { name = "crates" })
     end,
   },
-
   -- Add Rust & related to treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "rust", "ron" } },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "rust",
+        "ron",
+      })
+    end,
   },
-
   -- Ensure Rust debugger is installed
   {
     "williamboman/mason.nvim",
     optional = true,
-    opts = { ensure_installed = { "codelldb" } },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, { "codelldb" })
+    end,
   },
   {
     "mrcjkb/rustaceanvim",
@@ -108,14 +113,13 @@ return {
       servers = {},
     },
   },
-
   {
     "nvim-neotest/neotest",
-    optional = true,
-    opts = {
-      adapters = {
-        ["rustaceanvim.neotest"] = {},
-      },
-    },
+    opts = function(_, opts)
+      opts.adapters = opts.adapters or {}
+      vim.list_extend(opts.adapters, {
+        require("rustaceanvim.neotest"),
+      })
+    end,
   },
 }

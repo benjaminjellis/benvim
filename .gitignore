@@ -7,5 +7,5 @@ foo.*
 *.log
 data
 spell/*
-spell*
+./spell
 .DS_Store

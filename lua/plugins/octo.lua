@@ -1,5 +1,4 @@
 return {
-
   -- depends on the git extra for highlighting and auto-completion of github issues/prs
   { import = "lazyvim.plugins.extras.lang.git" },
 

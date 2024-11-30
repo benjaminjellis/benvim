@@ -5,7 +5,6 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-vim.opt.rtp:prepend("/Users/benjaminellis/code/BenCase/_opam/share/ocp-indent/vim")
 
 require("lazy").setup({
   spec = {

@@ -1,8 +1,6 @@
 return {
   {
     "benjaminjellis/citrusdream.nvim",
-    lazy = false,
-    priority = 1000,
     name = "citrusdream",
   },
   {
