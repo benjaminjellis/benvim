@@ -45,7 +45,7 @@
   "octo.nvim": { "branch": "master", "commit": "14d412f517a3cbea4cd4299207ee067fde542062" },
   "persistence.nvim": { "branch": "main", "commit": "f6aad7dde7fcf54148ccfc5f622c6d5badd0cc3d" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "rose-pine": { "branch": "main", "commit": "07a887a7bef4aacea8c7caebaf8cbf808cdc7a8e" },
+  "rose-pine": { "branch": "main", "commit": "1b906ba00db4eeb8eef2e2631b48e538226120cc" },
   "rustaceanvim": { "branch": "master", "commit": "9032904f60bd01cab22cf0291d2f5832277618b8" },
   "smart-splits.nvim": { "branch": "master", "commit": "07f9614f5b9405392d3b22fca9f51a9857f2d9b3" },
   "snacks.nvim": { "branch": "main", "commit": "60bd4e108cf7b2df0c0f578815b2b985d2cc2871" },

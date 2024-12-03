@@ -1,5 +1,5 @@
 return {
-  { "rose-pine/neovim", name = "rose-pine" },
+  { "benjaminjellis/rose-pine", name = "rose-pine" },
   { "folke/tokyonight.nvim", enabled = false },
   { "catppuccin/nvim", enabled = false },
   {
