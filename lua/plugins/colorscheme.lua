@@ -1,4 +1,5 @@
 return {
+  { "rose-pine/neovim", name = "rose-pine" },
   { "folke/tokyonight.nvim", enabled = false },
   { "catppuccin/nvim", enabled = false },
   {
@@ -8,7 +9,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "citrusdream",
+      colorscheme = "rose-pine",
     },
   },
 }
