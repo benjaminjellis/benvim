@@ -41,13 +41,11 @@ return {
           { section = "header" },
           { section = "keys" },
           { text = "", align = "center" },
-          { text = theRewardForGoodWork, align = "center" },
-          { text = "", align = "center" },
           { section = "startup" },
         },
 
         preset = {
-          header = modularLogo .. "\n\n" .. ivy,
+          header = modularLogo .. "\n\n" .. ivy .. "\n\n\n" .. theRewardForGoodWork,
           ---@type snacks.dashboard.Item[]
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
