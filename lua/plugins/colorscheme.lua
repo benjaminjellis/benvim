@@ -16,6 +16,7 @@ return {
   {
     "benjaminjellis/citrusdream.nvim",
     name = "citrusdream",
+    enabled = false,
   },
   {
     "LazyVim/LazyVim",
