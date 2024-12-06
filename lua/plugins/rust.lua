@@ -75,9 +75,6 @@ return {
             },
             -- Add clippy lints for Rust.
             checkOnSave = true,
-            check = {
-              command = "check",
-            },
             rustfmt = {
               extraArgs = { "--config", "imports_granularity=crate" },
             },
