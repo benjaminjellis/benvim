@@ -31,11 +31,21 @@ local ivy = [[
          /    |        
    (    /     |        
     ===/___) ||         ]]
+local theRewardForGoodWork = "The Reward For Good Work Is More Work"
 return {
   {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
+        sections = {
+          { section = "header" },
+          { section = "keys" },
+          { text = "", align = "center" },
+          { text = theRewardForGoodWork, align = "center" },
+          { text = "", align = "center" },
+          { section = "startup" },
+        },
+
         preset = {
           header = modularLogo .. "\n\n" .. ivy,
           ---@type snacks.dashboard.Item[]
