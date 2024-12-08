@@ -1,8 +1,19 @@
+local batteryConfig = function()
+  return {
+    -- check the battery status every minutes
+    update_rate_seconds = 60,
+  }
+end
+
 return {
+  {
+    "justinhj/battery.nvim",
+  },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     init = function()
+      require("battery").setup(batteryConfig())
       vim.g.lualine_laststatus = vim.o.laststatus
       if vim.fn.argc(-1) > 0 then
         -- set an empty statusline till lualine loads
@@ -18,6 +29,11 @@ return {
       lualine_require.require = require
 
       local icons = LazyVim.config.icons
+      local batteryStatus = {
+        function()
+          return require("battery").get_status_line()
+        end,
+      }
 
       vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -88,13 +104,14 @@ return {
                 end
               end,
             },
+            { "encoding" },
           },
           lualine_y = {
-            { "encoding" },
-            { "location", padding = { left = 1, right = 1 } },
+            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
-            { "progress", separator = " ", padding = { left = 1, right = 1 } },
+            batteryStatus,
           },
         },
         extensions = { "neo-tree", "lazy" },
