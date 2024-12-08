@@ -1,14 +1,100 @@
 local batteryConfig = function()
   return {
-    -- check the battery status every minutes
-    update_rate_seconds = 60,
+    -- check the battery status every 10 minutes
+    update_rate_seconds = 10,
   }
 end
 
 return {
+  -- Active indent guide and indent text objects. When you're browsing
+  -- code, this highlights the current level of indentation, and animates
+  -- the highlighting.
+  {
+    "echasnovski/mini.indentscope",
+    version = "0.14.0",
+    event = "LazyFile",
+    opts = {
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "Trouble",
+          "alpha",
+          "dashboard",
+          "fzf",
+          "help",
+          "lazy",
+          "mason",
+          "neo-tree",
+          "notify",
+          "snacks_notif",
+          "snacks_terminal",
+          "snacks_win",
+          "toggleterm",
+          "trouble",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "LazyFile",
+    opts = {
+      scope = { enabled = false },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      routes = {
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            find = "..hs.",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            find = "..fs.",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_show",
+            any = {
+              { find = "%d+L, %d+B" },
+              { find = "; after #%d+" },
+              { find = "; before #%d+" },
+            },
+          },
+          view = "mini",
+        },
+      },
+    },
+  },
+  -- battery status
   {
     "justinhj/battery.nvim",
   },
+  -- lualine
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",

@@ -12,8 +12,8 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- Debugging & Tests
-    { import = "lazyvim.plugins.extras.dap.core" },
-    { import = "lazyvim.plugins.extras.test.core" },
+    -- { import = "lazyvim.plugins.extras.dap.core" },
+    -- { import = "lazyvim.plugins.extras.test.core" },
 
     { import = "plugins" },
   },
