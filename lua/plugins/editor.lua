@@ -29,6 +29,7 @@ return {
       return { mode = "cursor", max_lines = 3 }
     end,
   },
+  -- set up harpoon2
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

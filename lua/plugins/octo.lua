@@ -1,7 +1,6 @@
 return {
   -- depends on the git extra for highlighting and auto-completion of github issues/prs
   { import = "lazyvim.plugins.extras.lang.git" },
-
   -- Octo
   {
     "pwntester/octo.nvim",
@@ -30,7 +29,6 @@ return {
       { "#", "#<C-x><C-o>", mode = "i", ft = "octo", silent = true },
     },
   },
-
   -- Octo Picker
   {
     "pwntester/octo.nvim",

@@ -226,4 +226,11 @@ return {
       return opts
     end,
   },
+  {
+    "eandrju/cellular-automaton.nvim",
+    event = "LazyFile",
+    keys = {
+      { "<leader>fi", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Fuck it" },
+    },
+  },
 }
