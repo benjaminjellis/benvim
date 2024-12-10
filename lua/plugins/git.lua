@@ -1,3 +1,4 @@
+-- git related plugins
 return {
   -- depends on the git extra for highlighting and auto-completion of github issues/prs
   { import = "lazyvim.plugins.extras.lang.git" },
@@ -45,7 +46,7 @@ return {
       -- Keep some empty windows in sessions
       vim.api.nvim_create_autocmd("ExitPre", {
         group = vim.api.nvim_create_augroup("octo_exit_pre", { clear = true }),
-        callback = function(ev)
+        callback = function(_)
           local keep = { "octo" }
           for _, win in ipairs(vim.api.nvim_list_wins()) do
             local buf = vim.api.nvim_win_get_buf(win)
