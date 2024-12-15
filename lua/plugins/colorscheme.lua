@@ -2,7 +2,9 @@ return {
   {
     "benjaminjellis/rose-pine",
     name = "rose-pine",
+
     opts = {
+      variant = "main",
       -- these options make the theme transparent
       -- disable_background = true,
       -- disable_float_background = true,
