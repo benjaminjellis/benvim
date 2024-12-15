@@ -6,6 +6,13 @@ local batteryConfig = function()
 end
 
 return {
+  {
+    "folke/snacks.nvim",
+    opts = {
+      animate = { enabled = false },
+      scroll = { enabled = false },
+    },
+  },
   -- Active indent guide and indent text objects. When you're browsing
   -- code, this highlights the current level of indentation, and animates
   -- the highlighting.
@@ -44,6 +51,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "LazyFile",
+    main = "ibl",
     opts = {
       scope = { enabled = false },
     },
@@ -148,29 +156,30 @@ return {
             { LazyVim.lualine.pretty_path() },
           },
           lualine_x = {
+            Snacks.profiler.status(),
             -- stylua: ignore
             {
               function() return require("noice").api.status.command.get() end,
               cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-              color = function() return LazyVim.ui.fg("Statement") end,
+              color = function() return { fg = Snacks.util.color("Statement") } end,
             },
             -- stylua: ignore
             {
               function() return require("noice").api.status.mode.get() end,
               cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-              color = function() return LazyVim.ui.fg("Constant") end,
+              color = function() return { fg = Snacks.util.color("Constant") } end,
             },
             -- stylua: ignore
             {
               function() return "  " .. require("dap").status() end,
               cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-              color = function() return LazyVim.ui.fg("Debug") end,
+              color = function() return { fg = Snacks.util.color("Debug") } end,
             },
             -- stylua: ignore
             {
               require("lazy.status").updates,
               cond = require("lazy.status").has_updates,
-              color = function() return LazyVim.ui.fg("Special") end,
+              color = function() return { fg = Snacks.util.color("Special") } end,
             },
             {
               "diff",
@@ -190,7 +199,6 @@ return {
                 end
               end,
             },
-            { "encoding" },
           },
           lualine_y = {
             { "progress", separator = " ", padding = { left = 1, right = 0 } },
@@ -231,6 +239,7 @@ return {
     event = "LazyFile",
     keys = {
       { "<leader>fi", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Fuck it" },
+      { "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Fuck it" },
     },
   },
 }
