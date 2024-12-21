@@ -5,6 +5,9 @@ return {
 
     opts = {
       variant = "main",
+      styles = {
+        transparency = false,
+      },
       -- these options make the theme transparent
       -- disable_background = true,
       -- disable_float_background = true,

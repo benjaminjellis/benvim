@@ -84,6 +84,8 @@ return {
       local opts = {
         options = {
           theme = "auto",
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           globalstatus = vim.o.laststatus == 3,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         },
@@ -108,11 +110,11 @@ return {
           lualine_x = {
             Snacks.profiler.status(),
             -- stylua: ignore
-            {
-              function() return require("noice").api.status.command.get() end,
-              cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-              color = function() return { fg = Snacks.util.color("Statement") } end,
-            },
+            -- {
+            --   function() return require("noice").api.status.command.get() end,
+            --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+            --   color = function() return { fg = Snacks.util.color("Statement") } end,
+            -- },
             -- stylua: ignore
             {
               function() return require("noice").api.status.mode.get() end,
