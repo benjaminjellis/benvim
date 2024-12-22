@@ -6,14 +6,14 @@ return {
     opts = {
       variant = "main",
       styles = {
-        transparency = false,
+        transparency = true,
       },
       -- these options make the theme transparent
-      -- disable_background = true,
-      -- disable_float_background = true,
-      -- highlight_groups = {
-      --   Normal = { bg = "none" },
-      -- },
+      disable_background = true,
+      disable_float_background = true,
+      highlight_groups = {
+        Normal = { bg = "none" },
+      },
     },
   },
   { "folke/tokyonight.nvim", enabled = false },
