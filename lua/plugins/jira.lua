@@ -26,7 +26,10 @@ local function maybe_set_up_jira()
       },
     }
   else
-    print("Expecting env vars to be set: JIRA_EMAIL, JIRA_DOMAIN, JIRA_API_TOKEN, JIRA_PROJECT_KEY. One was not set")
+    vim.notify(
+      "Expecting env vars to be set: JIRA_EMAIL, JIRA_DOMAIN, JIRA_API_TOKEN, JIRA_PROJECT_KEY. One was not set",
+      "warn"
+    )
     return {}
   end
 end
