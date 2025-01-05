@@ -1,10 +1,10 @@
-local jiraEmail = os.getenv("JIRA_EMAIL")
-local jiraDomain = os.getenv("JIRA_DOMAIN")
-local jiraApiToken = os.getenv("JIRA_API_TOKEN")
-local jiraProjectKey = os.getenv("JIRA_PROJECT_KEY")
+local jira_email = os.getenv("JIRA_EMAIL")
+local jira_domain = os.getenv("JIRA_DOMAIN")
+local jira_api_token = os.getenv("JIRA_API_TOKEN")
+local jira_project_key = os.getenv("JIRA_PROJECT_KEY")
 
-local function maybeSetUpJira()
-  if jiraEmail and jiraDomain and jiraApiToken and jiraProjectKey then
+local function maybe_set_up_jira()
+  if jira_email and jira_domain and jira_api_token and jira_project_key then
     return {
       "janBorowy/jirac.nvim",
       event = "VeryLazy",
@@ -14,11 +14,11 @@ local function maybeSetUpJira()
         "nvim-lua/plenary.nvim",
       },
       opts = {
-        email = jiraEmail,
-        jira_domain = jiraDomain,
-        api_key = jiraApiToken,
+        email = jira_email,
+        jira_domain = jira_domain,
+        api_key = jira_api_token,
         config = {
-          default_project_key = jiraProjectKey,
+          default_project_key = jira_project_key,
           keymaps = {},
           window_width = 150,
           window_height = 50,
@@ -35,5 +35,5 @@ local function maybeSetUpJira()
 end
 
 return {
-  maybeSetUpJira(),
+  maybe_set_up_jira(),
 }
