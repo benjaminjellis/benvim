@@ -1,10 +1,10 @@
-local jira_email = os.getenv("JIRA_EMAIL")
-local jira_domain = os.getenv("JIRA_DOMAIN")
-local jira_api_token = os.getenv("JIRA_API_TOKEN")
-local jira_project_key = os.getenv("JIRA_PROJECT_KEY")
+local jiraEmail = os.getenv("JIRA_EMAIL")
+local jiraDomain = os.getenv("JIRA_DOMAIN")
+local jiraApiToken = os.getenv("JIRA_API_TOKEN")
+local jiraProjectKey = os.getenv("JIRA_PROJECT_KEY")
 
-local function maybe_set_up_jira()
-  if jira_email and jira_domain and jira_api_token and jira_project_key then
+local function maybeSetUpJira()
+  if jiraEmail and jiraDomain and jiraApiToken and jiraProjectKey then
     return {
       "janBorowy/jirac.nvim",
       event = "VeryLazy",
@@ -14,11 +14,11 @@ local function maybe_set_up_jira()
         "nvim-lua/plenary.nvim",
       },
       opts = {
-        email = jira_email,
-        jira_domain = jira_domain,
-        api_key = jira_api_token,
+        email = jiraEmail,
+        jira_domain = jiraDomain,
+        api_key = jiraApiToken,
         config = {
-          default_project_key = jira_project_key,
+          default_project_key = jiraProjectKey,
           keymaps = {},
           window_width = 150,
           window_height = 50,
@@ -26,14 +26,14 @@ local function maybe_set_up_jira()
       },
     }
   else
-    vim.notify(
-      "Expecting env vars to be set: JIRA_EMAIL, JIRA_DOMAIN, JIRA_API_TOKEN, JIRA_PROJECT_KEY. One was not set",
-      "warn"
-    )
+    -- vim.notify(
+    --   "Expecting env vars to be set: JIRA_EMAIL, JIRA_DOMAIN, JIRA_API_TOKEN, JIRA_PROJECT_KEY. One was not set",
+    --   "warn"
+    -- )
     return {}
   end
 end
 
 return {
-  maybe_set_up_jira(),
+  maybeSetUpJira(),
 }
