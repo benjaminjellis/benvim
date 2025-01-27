@@ -48,6 +48,21 @@ return {
       },
     },
   },
+  {
+    "nvim-lspconfig",
+    opts = {
+      diagnostics = {
+        virtual_text = false,
+      },
+    },
+  },
+  {
+    "maan2003/lsp_lines.nvim",
+    lazy = false,
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
   -- battery status
   {
     "justinhj/battery.nvim",
