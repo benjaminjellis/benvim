@@ -8,14 +8,17 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
+
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- Debugging & Tests
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.test.core" },
-
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+
+    -- used for octo
+    { import = "lazyvim.plugins.extras.lang.git" },
 
     { import = "plugins" },
   },
