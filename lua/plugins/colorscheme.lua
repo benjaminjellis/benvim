@@ -1,8 +1,8 @@
 return {
+  { "neanias/everforest-nvim", name = "everforest", opts = { background = "hard", ui_contrast = "high" } },
   {
     "benjaminjellis/rose-pine",
     name = "rose-pine",
-
     opts = {
       variant = "main",
       styles = {
@@ -16,17 +16,11 @@ return {
       },
     },
   },
-  { "folke/tokyonight.nvim", enabled = false },
   { "catppuccin/nvim", enabled = false },
-  {
-    "benjaminjellis/citrusdream.nvim",
-    name = "citrusdream",
-    enabled = false,
-  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "everforest",
     },
   },
 }
