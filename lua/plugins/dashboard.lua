@@ -21,7 +21,7 @@ local ivy = [[
           / - \        
          /    |        
    (    /     |        
-    ===/___) ||         ]]
+    ---/___)| |         ]]
 local theRewardForGoodWork = "The Reward For Good Work Is More Work"
 return {
   {
