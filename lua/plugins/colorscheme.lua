@@ -1,5 +1,5 @@
 return {
-  { "neanias/everforest-nvim", name = "everforest", opts = { background = "hard", ui_contrast = "high" } },
+  { "neanias/everforest-nvim", name = "everforest", opts = { ui_contrast = "high" } },
   {
     "benjaminjellis/rose-pine",
     name = "rose-pine",
