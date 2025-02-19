@@ -7,6 +7,12 @@ end
 
 return {
   {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = { separator_style = "slope" },
+    },
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
