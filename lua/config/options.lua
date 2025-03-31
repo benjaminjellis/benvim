@@ -3,4 +3,3 @@
 -- Add any additional options here
 vim.opt.swapfile = false
 vim.g.snacks_animate = false
-vim.diagnostic.config({ virtual_lines = true })
