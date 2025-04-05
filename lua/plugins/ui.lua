@@ -58,7 +58,8 @@ return {
     "nvim-lspconfig",
     opts = {
       diagnostics = {
-        virtual_text = { current_line = true },
+        virtual_text = false,
+        virtual_lines = true,
       },
     },
   },
