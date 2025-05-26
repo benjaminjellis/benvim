@@ -6,12 +6,14 @@ local batteryConfig = function()
 end
 
 return {
+  -- change bufferline tab appearance
   {
     "akinsho/bufferline.nvim",
     opts = {
       options = { separator_style = "slope" },
     },
   },
+  -- add some custom filters to noice
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -99,8 +101,8 @@ return {
       local opts = {
         options = {
           theme = "auto",
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          -- component_separators = { left = "", right = "" },
+          -- section_separators = { left = "", right = "" },
           globalstatus = vim.o.laststatus == 3,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         },

@@ -1,7 +1,5 @@
 -- git related plugins
 return {
-
-  -- Octo
   {
     "pwntester/octo.nvim",
     cmd = "Octo",
@@ -10,7 +8,7 @@ return {
       enable_builtin = true,
       default_to_projects_v2 = true,
       default_merge_method = "squash",
-      picker = "telescope",
+      picker = "snacks",
     },
     keys = {
       { "<leader>gi", "<cmd>Octo issue list<CR>", desc = "List Issues (Octo)" },
@@ -40,18 +38,20 @@ return {
     "pwntester/octo.nvim",
     opts = function(_, opts)
       vim.treesitter.language.register("markdown", "octo")
-      if LazyVim.has("telescope.nvim") then
+      if LazyVim.has_extra("editor.telescope") then
         opts.picker = "telescope"
-      elseif LazyVim.has("fzf-lua") then
+      elseif LazyVim.has_extra("editor.fzf") then
         opts.picker = "fzf-lua"
+      elseif LazyVim.has_extra("editor.snacks_picker") then
+        opts.picker = "snacks"
       else
-        LazyVim.error("`octo.nvim` requires `telescope.nvim` or `fzf-lua`")
+        LazyVim.error("`octo.nvim` requires `telescope.nvim` or `fzf-lua` or `snacks.nvim`")
       end
 
       -- Keep some empty windows in sessions
       vim.api.nvim_create_autocmd("ExitPre", {
         group = vim.api.nvim_create_augroup("octo_exit_pre", { clear = true }),
-        callback = function(ev)
+        callback = function(_)
           local keep = { "octo" }
           for _, win in ipairs(vim.api.nvim_list_wins()) do
             local buf = vim.api.nvim_win_get_buf(win)
