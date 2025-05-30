@@ -1,6 +1,7 @@
 return {
   "frankroeder/parrot.nvim",
   event = "VeryLazy",
+  version = "1.8.0",
   dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
   opts = { providers = { gemini = {
     api_key = os.getenv("GEMINI_API_KEY"),
