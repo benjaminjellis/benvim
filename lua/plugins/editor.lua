@@ -2,38 +2,7 @@ return {
   -- provides integration with wexzterm multiplexing
   { "mrjones2014/smart-splits.nvim" },
   -- -- shift neo-tree to appear on right hand side
-  -- { "nvim-neo-tree/neo-tree.nvim", opts = { window = { position = "right" } } },
-  {
-    "folke/snacks.nvim",
-    opts = {
-      explorer = {},
-      picker = {
-        sources = {
-          explorer = {
-            layout = { layout = { position = "right" } },
-          },
-        },
-      },
-    },
-    keys = {
-      {
-        "<leader>fe",
-        function()
-          Snacks.explorer({ cwd = LazyVim.root() })
-        end,
-        desc = "Explorer Snacks (root dir)",
-      },
-      {
-        "<leader>fE",
-        function()
-          Snacks.explorer()
-        end,
-        desc = "Explorer Snacks (cwd)",
-      },
-      { "<leader>e", "<leader>fe", desc = "Explorer Snacks (root dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer Snacks (cwd)", remap = true },
-    },
-  },
+  { "nvim-neo-tree/neo-tree.nvim", opts = { window = { position = "right" } } },
   -- turn off unused snippet plugins
   {
     "garymjr/nvim-snippets",
