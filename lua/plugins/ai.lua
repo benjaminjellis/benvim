@@ -83,6 +83,9 @@ return {
         end,
       },
     },
+
+    chat_confirm_delete = false,
+    chat_free_cursor = true,
   },
   keys = {
     { "<leader>ac", "<cmd>PrtChatToggle<cr>", desc = "🦜 Open Parrot Chat" },
