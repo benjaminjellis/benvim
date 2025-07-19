@@ -1,11 +1,19 @@
 return {
+  -- colour highlighter
+  {
+    "norcalli/nvim-colorizer.lua",
+    lazy = true,
+    init = function()
+      require("colorizer").setup()
+    end,
+  },
   -- provides integration with wexzterm multiplexing
   { "mrjones2014/smart-splits.nvim" },
   {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = false,
   },
-  -- -- shift neo-tree to appear on right hand side
+  -- shift snacks explorer to appear on right hand side
   {
     "folke/snacks.nvim",
     opts = {
@@ -109,9 +117,9 @@ return {
     end,
   },
   -- inlay hints moved to the end of the line rather than being inline
-  -- {
-  --   "chrisgrieser/nvim-lsp-endhints",
-  --   event = "LspAttach",
-  --   opts = {},
-  -- },
+  {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {},
+  },
 }
