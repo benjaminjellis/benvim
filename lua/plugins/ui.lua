@@ -6,6 +6,8 @@ local batteryConfig = function()
 end
 
 return {
+  -- add nvim-web-devicons for linux
+  { "nvim-tree/nvim-web-devicons", lazy = false, opts = {} },
   -- change bufferline tab appearance
   {
     "akinsho/bufferline.nvim",
@@ -196,13 +198,5 @@ return {
 
       return opts
     end,
-  },
-  {
-    "eandrju/cellular-automaton.nvim",
-    event = "LazyFile",
-    keys = {
-      { "<leader>fi", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Fuck it" },
-      { "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Fuck it" },
-    },
   },
 }

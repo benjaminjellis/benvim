@@ -9,6 +9,7 @@ return {
   },
   -- provides integration with wexzterm multiplexing
   { "mrjones2014/smart-splits.nvim" },
+  -- disable neo-tree in favour of the snacks picker
   {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = false,
