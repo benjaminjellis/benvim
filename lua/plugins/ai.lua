@@ -9,8 +9,8 @@ return {
         endpoint = function(self)
           vim.notify(self._model)
           return "https://generativelanguage.googleapis.com/v1beta/models/"
-              .. self._model
-              .. ":streamGenerateContent?alt=sse"
+            .. self._model
+            .. ":streamGenerateContent?alt=sse"
         end,
         model_endpoint = function(self)
           return { "https://generativelanguage.googleapis.com/v1beta/models?key=" .. self.api_key }
@@ -70,12 +70,12 @@ return {
           end
           local success, decoded = pcall(vim.json.decode, response)
           if
-              success
-              and decoded.candidates
-              and decoded.candidates[1]
-              and decoded.candidates[1].content
-              and decoded.candidates[1].content.parts
-              and decoded.candidates[1].content.parts[1]
+            success
+            and decoded.candidates
+            and decoded.candidates[1]
+            and decoded.candidates[1].content
+            and decoded.candidates[1].content.parts
+            and decoded.candidates[1].content.parts[1]
           then
             return decoded.candidates[1].content.parts[1].text
           end
